@@ -7,9 +7,7 @@ const notificationSlice = createSlice({
     initialState,
     reducers: {
         setNotification(state, action) {
-            console.log("setting notification")
             const notification = action.payload
-            console.log(notification)
             return notification
         }
     }
