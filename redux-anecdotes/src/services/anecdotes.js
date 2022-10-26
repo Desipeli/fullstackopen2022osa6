@@ -7,6 +7,12 @@ const getAll = async () => {
     return res.data
 }
 
+const getById = async (id) => {
+    const res = await axios.get(`${baseUrl}/${id}`)
+    console.log(res.data)
+    return res.data
+}
+
 const saveAnecdote = async (content) => {
     const res = await axios.post(baseUrl, {
         content: content,
@@ -15,4 +21,9 @@ const saveAnecdote = async (content) => {
     return res.data
 }
 
-export { getAll, saveAnecdote }
+const updateAnecdote = async (content) => {
+    const res = await axios.put(`${baseUrl}/${content.id}`, content)
+    return res.data
+}
+
+export { getAll, saveAnecdote, getById, updateAnecdote }
