@@ -12,7 +12,8 @@ const AnecdoteList = () => {
     const vote = ({ id, content }) => {
       dispatch(likeAnecdote(id))
       dispatch(setNotification(
-        `You voted ${content}`
+        `You voted ${content}`,
+        3
       ))
     }
 
